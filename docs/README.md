@@ -1,8 +1,13 @@
 # FiveM Basic Package Bomb
 
-Introducing the ultimate explosive experience for FiveM: Basic Package Bomb Script! Prepare for a thrilling adventure that will immerse you in explosive chaos like never before. With its simple yet powerful system, you'll have the ability to unleash destruction with ease.
+EN: 
 
-Upgrade your FiveM adventure today with the Basic Package Bomb Script and take your gaming performance to new heights. Are you ready to embrace the explosive revolution? The choice is yours.
+"Packet Bomb Script" for FiveM is a simple yet powerful system designed for explosive immersion. Utilizing the ox_target library, this script ensures the best performance and synchronized gameplay. Deploy packet bombs strategically and create a dynamic multiplayer experience. Elevate your FiveM server with thrilling chaos and excitement.
+
+
+DE: 
+
+Das "Packet Bomb Script" für FiveM ist ein einfaches, aber leistungsstarkes System, das explosive Immersion ermöglicht. Mit der Nutzung der ox_target-Bibliothek sorgt dieses Skript für optimale Leistung und synchronisiertes Gameplay. Platziere Paketbomben strategisch und schaffe eine dynamische Multiplayer-Erfahrung. Steigere dein FiveM-Servererlebnis mit aufregendem Chaos und Spannung.
 
 ---
 
@@ -28,3 +33,10 @@ Config.Text {
 }
 ```
 Locale display text. 
+
+---
+
+## Dependencies
+
+- [es_extended (Legacy)](https://github.com/esx-framework/esx_core/releases/tag/1.9.4)
+- [ox_target](https://github.com/overextended/ox_target/releases/tag/v1.9.2)
