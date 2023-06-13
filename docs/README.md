@@ -2,7 +2,7 @@
 
 EN: 
 
-"Packet Bomb Script" for FiveM is a simple yet powerful system designed for explosive immersion. Utilizing the ox_target library, this script ensures the best performance and synchronized gameplay. Deploy packet bombs strategically and create a dynamic multiplayer experience. Elevate your FiveM server with thrilling chaos and excitement.
+"Package Bomb Script" for FiveM is a simple yet powerful system designed for explosive immersion. Utilizing the ox_target library, this script ensures the best performance and synchronized gameplay. Deploy packet bombs strategically and create a dynamic multiplayer experience. Elevate your FiveM server with thrilling chaos and excitement.
 
 
 DE: 
