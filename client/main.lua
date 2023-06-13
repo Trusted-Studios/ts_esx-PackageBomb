@@ -19,7 +19,7 @@ RegisterNetEvent('GMW_Scripts:PakageBomb:Place', function()
     local settings = {
         {
             name = 'package:open',
-            icon = 'fa-solid fa-road',
+            icon = 'fa-sharp fa-solid fa-box-open-full',
             label = Config.Text['open_package'],
             canInteract = function(entity, distance, coords, name, bone)
                 return distance < 3
