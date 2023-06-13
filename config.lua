@@ -16,3 +16,9 @@ Config = {}
 
 Config.Item = 'package_bomb'
 
+Config.Prop = "prop_cs_box_clothes"
+
+Config.Text {
+    ['open_package'] = "Paket öffnen"
+}
+

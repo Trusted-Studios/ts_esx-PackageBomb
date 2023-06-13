@@ -18,13 +18,9 @@ print("^6[SERVER - DEBUG] ^0: "..filename()..".lua gestartet");
 -- Code
 -- ════════════════════════════════════════════════════════════════════════════════════ --
 
-local PlacedObjects = 0
-
 ESX.RegisterUsableItem(Config.Item, function(source)
     local xPlayer = ESX.GetPlayerFromId(source)
     xPlayer.removeInventoryItem(Config.Item, 1)
 
-    PlacedObjects += 1 
-
-    TriggerClientEvent('GMW_Scripts:PackageBomb:Place', source, PlacedObjects)
+    TriggerClientEvent('GMW_Scripts:PackageBomb:Place', source)
 end)

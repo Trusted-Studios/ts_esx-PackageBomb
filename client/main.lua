@@ -12,16 +12,32 @@ print("^6[CLIENT - DEBUG] ^0: "..filename()..".lua gestartet");
 -- Code
 -- ════════════════════════════════════════════════════════════════════════════════════ --
 
-PakageBomb = {
-    Objects = {}
-}
+PackageBomb = {}
 
-RegisterNetEvent('GMW_Scripts:PakageBomb:Place', function(ObjectId)
+RegisterNetEvent('GMW_Scripts:PakageBomb:Place', function()
     local object = Anim:Play()
-    PackageBomb.Objects[ObjectId] = object
-
-    ---@todo: add ox_lib target
+    local settings = {
+        {
+            name = 'package:open',
+            icon = 'fa-solid fa-road',
+            label = Config.Text['open_package'],
+            canInteract = function(entity, distance, coords, name, bone)
+                return distance < 3
+            end,
+            onSelect = function(data)
+                PackageBomb:Explode(data)
+            end
+        },
+    }
+    exports.ox_target:addEntity(NetworkGetNetworkIdFromEntity(object), settings)
 end)
 
+function PackageBomb:Explode(data)
+    local x, y, z = table.unpack(GetEntityCoords(data.entity))
+
+    AddExplosion(x, y, z, 0, 1, true, false, true)
+
+    DeleteEntity(data.entity)
+end 
 
 

@@ -25,7 +25,7 @@ function Anim:Play()
     RequestAnimDict(animDict)
     repeat Wait(0) until HasAnimDictLoaded(animDict) 
     
-    local Object = Game.SpawnObjectAtCoords("prop_cs_box_clothes", 0, 0, 0)
+    local Object = Game.SpawnObjectAtCoords(Config.Prop, 0, 0, 0)
     
     TaskPlayAnim(self.ped, animDict, animName, 8.0, -1, -1, 0, 0, 0, 0, 0)
     Wait(875)
