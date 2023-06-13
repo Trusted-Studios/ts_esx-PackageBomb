@@ -28,7 +28,7 @@ The name of the prop that will spawn.
 ---
 
 ```lua
-Config.Text {
+Config.Text = {
     ['open_package'] = "Paket öffnen"
 }
 ```
