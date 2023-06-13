@@ -14,7 +14,7 @@ print("^6[CLIENT - DEBUG] ^0: "..filename()..".lua gestartet");
 
 PackageBomb = {}
 
-RegisterNetEvent('GMW_Scripts:PakageBomb:Place', function()
+RegisterNetEvent('GMW_Scripts:PackageBomb:Place', function()
     local object = Anim:Play()
     local settings = {
         {
