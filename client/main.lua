@@ -15,7 +15,6 @@ print("^6[CLIENT - DEBUG] ^0: "..filename()..".lua gestartet");
 PackageBomb = {}
 
 RegisterNetEvent('GMW_Scripts:PackageBomb:Place', function()
-
     local object = Anim:Play()
     local settings = {
         {
@@ -30,9 +29,6 @@ RegisterNetEvent('GMW_Scripts:PackageBomb:Place', function()
             end
         },
     }
-
-    print(object)
-
     exports.ox_target:addEntity(NetworkGetNetworkIdFromEntity(object), settings)
 end)
 
