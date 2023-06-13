@@ -24,3 +24,7 @@ ESX.RegisterUsableItem(Config.Item, function(source)
 
     TriggerClientEvent('GMW_Scripts:PackageBomb:Place', source)
 end)
+
+RegisterNetEvent('GMW_Scripts:PackageBomb:RegisterTarget', function(objectNetId)
+    TriggerClientEvent('GMW_Scripts:PackageBomb:AddTarget', -1, objectNetId)
+end)

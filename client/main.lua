@@ -16,6 +16,10 @@ PackageBomb = {}
 
 RegisterNetEvent('GMW_Scripts:PackageBomb:Place', function()
     local object = Anim:Play()
+    TriggerServerEvent('GMW_Scripts:PackageBomb:RegisterTarget', NetworkGetNetworkIdFromEntity(object))
+end)
+
+RegisterNetEvent('GMW_Scripts:PackageBomb:AddTarget', function(objectNetId)
     local settings = {
         {
             name = 'package:open',
@@ -25,21 +29,26 @@ RegisterNetEvent('GMW_Scripts:PackageBomb:Place', function()
                 return distance < 3
             end,
             onSelect = function(data)
-                PackageBomb:Explode(data)
+                PackageBomb:Explode(data.entity, objectNetId)
             end
         },
     }
-    exports.ox_target:addEntity(NetworkGetNetworkIdFromEntity(object), settings)
+    exports.ox_target:addEntity(objectNetId, settings)
 end)
 
-function PackageBomb:Explode(data)
-    local x, y, z = table.unpack(GetEntityCoords(data.entity))
+
+function PackageBomb:Explode(entity, objectNetId)
+    local x, y, z = table.unpack(GetEntityCoords(entity))
 
     Anim:Duck()
     Wait(1000)
 
+    NetworkRequestControlOfNetworkId(objectNetId)
+
+    repeat Wait(10) until NetworkHasControlOfNetworkId(objectNetId)
+
 	AddExplosion(x, y, z, 9, 0.9, 1, 0, 1065353216, 0)
-    DeleteEntity(data.entity)
+    DeleteEntity(NetworkGetEntityFromNetworkId(objectNetId))
 end 
 
 

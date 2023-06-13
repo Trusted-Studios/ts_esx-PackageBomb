@@ -19,7 +19,7 @@ function Game.SpawnObjectAtCoords(hash, x, y, z)
     while not HasModelLoaded(hash) do
         Citizen.Wait(500)
     end
-    local object = CreateObjectNoOffset(hash, x, y, z, 1, 0, 1)
+    local object = CreateObjectNoOffset(hash, x, y, z, true, false, false)
     PlaceObjectOnGroundProperly(object)
     FreezeEntityPosition(object, true)
     SetModelAsNoLongerNeeded(hash)
