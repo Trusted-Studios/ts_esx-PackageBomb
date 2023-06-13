@@ -5,10 +5,13 @@ author 'German. Warthog'
 
 lua54 'yes'
 
-shared_scripts {'config.lua'}
+shared_scripts {
+    'config.lua'
+}
 
 client_scripts {
-    'client/components/.lua',
+    'lib/**/*.lua',
+    'client/components/*.lua',
     'client/main.lua',
 }
 

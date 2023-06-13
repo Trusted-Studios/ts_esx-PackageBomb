@@ -39,7 +39,17 @@ function Anim:Play()
     
     ClearPedTasks(self.ped)
     
-    SetTimeout(5e3, function()
-        DeleteObject(Object)
-    end) 
+    return Object
+end
+
+function Anim:Duck()
+    self.ped = PlayerPedId()
+
+    local animDict = "amb@world_human_bum_wash@male@low@idle_a"
+    local animName = "idle_a"
+
+    RequestAnimDict(animDict)
+    repeat Wait(0) until HasAnimDictLoaded(animDict) 
+
+    TaskPlayAnim(self.ped, animDict, animName, 8.0, 0.2, 0.8, 0, 0, 0, 0, 0)
 end
